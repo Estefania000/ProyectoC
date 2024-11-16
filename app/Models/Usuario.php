@@ -21,13 +21,13 @@ class Usuario extends Authenticatable
         'password',
     ];
 
-    // Ocultar campos sensibles al serializar el modelo
+    
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    // Mutador para encriptar automáticamente la contraseña
+    
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
